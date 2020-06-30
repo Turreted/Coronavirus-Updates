@@ -12,15 +12,8 @@ id_num = 0
 datadict = {}
 
 email_list =   [
-		'gideonmitchell01@gmail.com',
-		#'stockman1221@gmail.com',
-		#'agoolsb@ucls.uchicago.edu',
-		#'elight@ucls.uchicago.edu',
-		#'steven@shermancapitalgroup.com',
-		#'nedwards@ucls.uchicago.edu',
-		#'heidismitchell@gmail.com',
-		#'cjd.mitchell@gmail.com'
-		]
+	"Add Emails Here!"	
+	]
 
 # INFO BY COUNTRY
 
@@ -33,12 +26,12 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls() 
 
 # Authentication 
-s.login("coronavirusupdates726@gmail.com", "Bobisbest4401") 
+s.login("example@email.com", "<your password>")
 
 # message to be sent 
 msg = MIMEMultipart()
-msg['From'] = 'coronavirusupdates726@gmail.com'
-msg['To'] = 'gideonmitchell01@gmail.com'
+msg['From'] = ''
+msg['To'] = ''
 msg['Subject'] = 'Coronavirus Update'
 
 def attacth_image(filename: str, msg):
@@ -105,7 +98,7 @@ msg.attach(MIMEText(HTML_body, 'html', 'utf-8'))
 
 # sending the mail 
 for email in email_list:
-	s.sendmail("coronavirusupdates726@gmail.com", email, msg.as_string()) 
+	s.sendmail("<sender-email>", email, msg.as_string()) 
   
 # terminating the session 
 s.quit()
