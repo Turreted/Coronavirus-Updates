@@ -12,7 +12,7 @@ id_num = 0
 datadict = {}
 
 email_list =   [
-	"Add Emails Here!"	
+	"gideonmitchell01@gmail.com"	
 	]
 
 # INFO BY COUNTRY
@@ -26,7 +26,7 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls() 
 
 # Authentication 
-s.login("example@email.com", "<your password>")
+s.login("example@example.com", "Password123")
 
 # message to be sent 
 msg = MIMEMultipart()

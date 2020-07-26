@@ -90,8 +90,16 @@ def graph(df: pandas.DataFrame, name: str, title=None):
 
     fig, ax = plt.subplots()
     xticks = np.arange(len(dates))
-    ax.bar(xticks, values)
-    plt.xticks(xticks[::5], dates[::5], rotation=30)
+    ax.plot(xticks, values)
+    
+    ax_xticks = xticks[::int(len(xticks)/10)]
+    ax_xticks[-1] = xticks[-1]
+
+    ax_dates = dates[::int(len(dates)/10)]
+    ax_dates[-1] = dates[-1]
+
+    plt.xticks(ax_xticks, ax_dates, rotation=30)
+    plt.ticklabel_format(style='plain', axis='y')
     ax.set_title(title)
     plt.savefig(name)
 

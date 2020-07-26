@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
-~/venv/bin/python3 /home/pi/Documents/coronavirus_tracker/main.py
-~/venv/bin/python3 /home/pi/Documents/coronavirus_tracker/sender.py
+python3 ./main.py
+python3 ./sender.py
 
